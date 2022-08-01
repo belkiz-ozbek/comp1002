@@ -1,0 +1,89 @@
+#include<stdio.h>
+
+//kullanıcıdan bir sayı al, o sayının basamak sayısı kadar yıldız yazdırsın.
+
+void printStars(int number, int numberOfStars);
+
+
+int main (void){
+	
+	char number;
+	int numberOf0 = 0;
+	int numberOf1 = 0;
+	int numberOf2 = 0;
+	int numberOf3 = 0;
+	int numberOf4 = 0;
+	int numberOf5 = 0;
+	int numberOf6 = 0;
+	int numberOf7 = 0;
+	int numberOf8 = 0;
+	int numberOf9 = 0;
+	
+	
+	
+while((number = getchar()) != EOF){
+
+	switch(number){
+		case '0':
+			numberOf0++;
+			break;
+		case '1':
+			numberOf1++;
+			break;
+		case '2':
+			numberOf2++;
+			break;
+		case '3':
+			numberOf3++;
+			break;
+		case '4':
+			numberOf4++;
+			break;
+		case '5':
+			numberOf5++;
+			break;
+		case '6':
+			numberOf6++;
+			break;
+		case '7':
+			numberOf7++;
+			break;
+		case '8':
+			numberOf8++;
+			break;
+		case '9':
+			numberOf9++;
+			break;
+		default:
+			break;
+	}
+}
+
+
+printStars(0, numberOf0);
+printStars(1, numberOf1);
+printStars(2, numberOf2);
+printStars(3, numberOf3);
+printStars(4, numberOf4);
+printStars(5, numberOf5);
+printStars(6, numberOf6);
+printStars(7, numberOf7);
+printStars(8, numberOf8);
+printStars(9, numberOf9);
+
+	return 0;
+}
+
+
+void printStars(int number, int numberOfStars){
+	
+	int i;
+	
+	printf("%d", number);
+	
+	for(i = 0; i < numberOfStars; i++){
+		printf("*");
+	} 
+	printf("\n");
+	
+}
