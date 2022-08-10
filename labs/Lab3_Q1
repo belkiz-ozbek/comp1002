@@ -1,0 +1,70 @@
+#include<stdio.h>
+
+int isPrime(int number);
+
+int main(){
+
+int L, U;
+int numberPrime = 0;
+int numberPerfect = 0;
+int i;
+
+//printf("Enter two numbers: ");
+scanf("%d%d", &L, &U);
+
+//printf("\nL: %d U: %d\n", L, U);
+
+if(L < 1) 
+	return 0;
+
+	for(i = L; i <= U; i++){
+		numberPrime += isPrime(i);	
+		numberPerfect += isPerfect(i);		
+	}
+
+printf("Prime: %d",numberPrime);
+printf("\nPerfect: %d",
+numberPerfect);
+	
+	return 0;
+}
+
+int isPerfect(int number){
+	
+	int i;
+	int perfectSum = 0;
+	
+	for(i = 1; i < number; i++){
+		if(number % i == 0){
+			perfectSum += i;
+		}
+	}
+	
+	if(perfectSum == number){
+		return 1;
+	}
+	
+	else
+		return 0;	
+}
+
+int isPrime(int i){
+	
+	int j;
+	
+	if(i == 2){
+		return 1;
+	}
+	
+	if(i == 1){
+		return 0;
+	}
+	
+	for(j = 2; j <= i / 2; j++){
+		if(i % j == 0){
+			return 0;
+		}
+	}
+	
+	return 1;
+}
