@@ -1,0 +1,43 @@
+#include<stdio.h>
+#define SIZE 10
+
+int keySearch(int a[], int key);
+
+int main (){
+	
+	int i;
+	int a[SIZE];
+	int key;
+	
+	for(i = 0; i < 10; i++){
+		scanf("%d", &a[i]);
+	}
+	
+	//printf("\nEnter a key number: \n");
+	scanf("%d", &key);
+	
+	
+	if(keySearch(a, key) == -1)
+		printf("-1");	
+	
+	return 0;
+}
+
+int keySearch(int a[], int key){
+	
+	int flag = -1;
+	int i, j;
+	
+		for(i = 0; i < 10; i++){
+			for(j = i; j < 10; j++){
+				
+				if(a[i] + a[j] == key){
+					flag = 1;
+					printf("%d %d\n", i, j);
+				}
+					
+			}
+		}
+	
+	return flag;
+	}
